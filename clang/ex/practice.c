@@ -33,24 +33,55 @@
 // }
 
 
-// ++++++++++ use of if/else ++++++++++++
+// // ++++++++++ use of if/else ++++++++++++
+// #include<stdio.h>
+// int main (){
+
+//     int age;
+//     printf("please enter your age ");
+//     scanf("%d", &age);
+
+//     if (age>18)
+//     {
+//         printf("your are eligible %d\n", age);
+//     }
+//     else
+//     {
+//         printf("you are not eligible\n");
+//     };
+
+//     return 0;
+// } 
+
+
+
+// ++++++++++++++++ use of switch case ++++++++++
+
 #include<stdio.h>
-int main (){
-
-    int age;
-    printf("please enter your age ");
-    scanf("%d", &age);
-
-    if (age>18)
+int main()
+{
+    int a;
+    printf("Please enter a number between 1-4: ");
+    scanf("%d", &a);
+    switch (a)
     {
-        printf("your are eligible %d\n", age);
+    case 1:
+        printf("you enterd 1\n");
+        break;
+    case 2:
+        printf("you enterd 2\n");
+        break;
+    case 3:
+        printf("you enterd 3\n");
+        break;
+    case 4:
+        printf("you enterd 4\n");
+        break;
+    
+    default:
+        printf("nothing match\n");
+        break;
     }
-    else
-    {
-        printf("you are not eligible\n");
-    };
-
     return 0;
-} 
-
+}
 

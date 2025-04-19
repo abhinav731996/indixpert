@@ -25,6 +25,7 @@
 
 
 // ++++++++++++++ Even/Odd +++++++++++++++
+
 // #include<stdio.h>
 // int main()
 // {
@@ -52,7 +53,7 @@ int main ()
     scanf("%d", &num1);
     
     char operator;
-    printf("enter any operation: ");
+    printf("enter any operation(-, +, *): ");
     scanf(" %c", &operator);                       // why do we add space before %c?
 
     int num2;
@@ -83,8 +84,6 @@ int main ()
     {
         printf("Please enter valid operation!!\n");
     }
-    
-    
     
     return 0;
 }
