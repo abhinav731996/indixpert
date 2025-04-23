@@ -182,17 +182,66 @@
 // }
 
 
-#include<stdio.h>   
+
+// #include<stdio.h>
+// int main()
+// {
+//     int num;
+//     printf("Enter a number between 97-122: ");
+//     scanf("%d", &num);
+
+//     printf("the number which is %d is ASCII value of '%c'\n", num, num);
+
+//     return 0;
+// }
+
+
+
+
+
+#include<stdio.h>
 int main()
 {
-    char ch;
+    int number;
+    printf("please enter a number b/w 1-7: ");
+    scanf("%d", &number);
 
-    for (ch = 'a'; ch <= 'z'; ch++)
+    if (number>0 && number<8)
     {
-        printf("%c\t ", ch);
+        switch (number)
+        {
+        case 1:
+            printf("Monday\n");
+            break;
+        case 2:
+            printf("Tuesday\n");
+            break;
+        case 3:
+            printf("Wednesday\n");
+            break;
+        case 4:
+            printf("Thursday\n");
+            break;
+        case 5:
+            printf("Friday\n");
+            break;
+        case 6:
+            printf("Saturday\n");
+            break;
+        case 7:
+            printf("Sunday\n");
+            break;
+        
+        default:
+            break;
+        }
+    }
+    else
+    {
+        printf("please enter a number b/w 1-7!!");
     }
     
 
+
     return 0;
 }
-
