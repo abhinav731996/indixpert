@@ -131,7 +131,7 @@
 //     printf("please enter any number 0-100: ");
 //     scanf("%d", &num);
 
-//     if (num>0, num<100)
+//     if (num>0 && num<100)
 //     {
 //         if (num%2==0)
 //         {
@@ -140,7 +140,7 @@
 //         }
 //         else
 //         {
-//             printf("Your number is odd: %d", num);n
+//             printf("Your number is odd: %d", num);
 //         }
         
 //     }
@@ -152,37 +152,37 @@
 
 //+++++++++++ Squar & Cube +++++++++++++++
 
-#include<stdio.h>
-int main()
-{
-    int num;
-    printf("1 for squar: \n");
-    printf("2 for cube: \n");
-    int option;
-    printf("Please select any option: ");
-    scanf("%d",&option);
+// #include<stdio.h>
+// int main()
+// {
+//     int num;
+//     printf("1 for squar: \n");
+//     printf("2 for cube: \n");
+//     int option;
+//     printf("Please select any option: ");
+//     scanf("%d",&option);
 
-    if (option>0 && option<3)               //++++++ Important ++++++++++
-    {
-    printf("pleas enter any number: ");
-    scanf("%d",&num);
-    }
+//     if (option>0 && option<3)               //++++++ Important ++++++++++
+//     {
+//     printf("pleas enter any number: ");
+//     scanf("%d",&num);
+//     }
 
-    if (option==1)
-    {
-        printf("%d squar is: %d\n", num, num*num);
-    }
-    else if (option==2)
-    {
-        printf("%d cube is: %d\n", num, num*num*num);
-    }
-    else
-    {
-        printf("please select valid option!!\n");
-    }
+//     if (option==1)
+//     {
+//         printf("%d squar is: %d\n", num, num*num);
+//     }
+//     else if (option==2)
+//     {
+//         printf("%d cube is: %d\n", num, num*num*num);
+//     }
+//     else
+//     {
+//         printf("please select valid option!!\n");
+//     }
 
-    return 0;
-}
+//     return 0;
+// }
 
 
 
@@ -201,6 +201,95 @@ int main()
 // }
 
 
+// hindi, english, math = marks 
+// 1st division = >60 
+// 2nd division = >45, <60
+// 3rd division = >33, <45
+// sole this using switch case 
 
+
+#include<stdio.h>
+int main()
+{
+
+    int english;
+    printf("Enter English marks: \n");
+    scanf("%d", &english);
+    
+    int hindi;
+    printf("Enter Hindi marks: \n");
+    scanf("%d", &hindi);
+
+    int math;
+    printf("Enter Math marks: \n");
+    scanf("%d", &math);
+
+    int sum = english + hindi + math;
+    printf("total = %d\n", sum);
+
+    int average = sum/3;
+    printf("Average: %d\n", average);
+
+    // if (average >= 65) 
+    // {
+    //     printf("1st Division!!\n");
+    // }
+    // else if (average >= 45) {
+    //     printf("2nd Division.\n");
+    // }
+    // else if (average >= 33) {
+    //     printf("3rd Division.\n");
+    // }
+    // else {
+    //     printf("Fail.\n");
+    // }
+    
+    // switch (average/10)
+    // {
+    // case 10:
+    // case 9 :
+    // case 8 :
+    // case 7 :
+    // case 6 :
+    //     printf("1st division");
+    //     break;
+    // case 5 :
+    //     printf("2nd division");
+    //     break;
+    // case 4 :
+    // case 3 :
+    //     printf("3rd division");
+    // break;
+    // default:
+    //     printf("You are fail!!");
+    //     break;
+    // }
+
+    if (average>=60)
+    {
+        switch (average/10)
+    {
+    case 10:
+    case 9 :
+    case 8 :
+    case 7 :
+    case 6 :
+        printf("1st division");
+        break;
+    }
+    }
+    else if (average >= 45 && average<60) {
+        printf("2nd Division.\n");
+    }
+    else if (average >= 33 && average<45) {
+        printf("3rd Division.\n");
+    }
+    else {
+        printf("Fail!!\n");
+    }
+    
+
+    return 0;
+}
 
 
