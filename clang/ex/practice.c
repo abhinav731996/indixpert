@@ -85,3 +85,48 @@
 //     return 0;
 // }
 
+// hindi, english, math = marks 
+// 1st division = >60 
+// 2nd division = >45, <60
+// 3rd division = >33, <45
+// sole this using switch case 
+
+#include<stdio.h>
+int main()
+{
+
+    int english;
+    printf("Enter English marks: \n");
+    scanf("%d", &english);
+    
+    int hindi;
+    printf("Enter Hindi marks: \n");
+    scanf("%d", &hindi);
+
+    int math;
+    printf("Enter Math marks: \n");
+    scanf("%d", &math);
+
+    int sum = english + hindi + math;
+    printf("total = %d\n", sum);
+
+    int average = sum/3;
+    printf("Average: %d\n", average);
+
+    if (average >= 65) 
+    {
+        printf("1st Division!!\n");
+    }
+    else if (average >= 50) {
+        printf("2nd Division.\n");
+    }
+    else if (average >= 33) {
+        printf("3rd Division.\n");
+    }
+    else {
+        printf("Fail.\n");
+    }
+
+    return 0;
+}
+
