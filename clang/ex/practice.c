@@ -85,6 +85,10 @@
 //     return 0;
 // }
 
+
+
+//+++++++++++++ Grade system +++++++++++++++
+
 // hindi, english, math = marks 
 // 1st division = >60 
 // 2nd division = >45, <60
