@@ -31,7 +31,7 @@
 //     return 0; 
 // } 
 
-// +++++++++++++++++++++++++++++++++++++++
+// +++++++++++++++++ Practice ++++++++++++++++++++++
 
 // #include <stdio.h>
 
@@ -55,13 +55,13 @@
 
 
 
-// ++++++++++++++++++++++++++++++++++++++++++
+// +++++++++++++++++++++++ Get Vowels +++++++++++++++++++
 #include <stdio.h>
 
 int main() {
     char ch;
     int flag = 1;
-    while (flag) {
+    while (flag>0) {
         printf("Please enter any character: ");
         scanf(" %c", &ch);
 

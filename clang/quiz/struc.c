@@ -215,21 +215,21 @@
 // *
 
 
-// #include<stdio.h>
-// int main()
-// {
+#include<stdio.h>
+int main()
+{
     
-//     for (int i = 0; i < 7; i++)
-//     {
-//         printf("* ");
-//     }
-//     for (int i = 0; i < 5; i++)
-//     {
-//         printf("*\n");
-//     }
+    for (int i = 0; i < 7; i++)
+    {
+        printf("* ");
+    }
+    for (int i = 0; i < 5; i++)
+    {
+        printf("*\n");
+    }
     
-//     return 0;
-// }
+    return 0;
+}
 
 
 //+++++++++++++++ Another case ++++++++++++
@@ -238,26 +238,24 @@
 //  ***
 //   *
 
-#include<stdio.h>
-int main()
-{
-    int row = 3;
-    int star = 5;
-    for (int i = 0; i < row; i++)
-    {
-        for (int space = 0; space < i; space++)
-        {
-            printf(" ");
-        }
-        for (int j = 0; j < star - 2 * i; j++)
-        {
-            printf("*");
-        }
+// #include<stdio.h>
+// int main()
+// {
+//     int row = 3;
+//     int star = 5;
+//     for (int i = 0; i < row; i++)
+//     {
+//         for (int space = 0; space < i; space++)
+//         {
+//             printf(" ");
+//         }
+//         for (int j = 0; j < star - 2 * i; j++)
+//         {
+//             printf("*");
+//         }
        
-        printf("\n");
-    }
+//         printf("\n");
+//     }
     
-    
-    
-    return 0;
-}
+//     return 0;
+// }
