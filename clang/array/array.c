@@ -65,7 +65,7 @@ int main()
 {
     char name[7];
     printf("please enter your name: ");
-    scanf("%s", name);
+    scanf("%s",name);
 
     printf("output\n");
 
