@@ -1,21 +1,54 @@
-#include<stdio.h>
+// #include<stdio.h>
+// int main()
+// {
+//     int num[] = {23, 44, 55, 33, 76, 88, 18, 55};
+
+//     int length = sizeof(num)/sizeof(num[0]);
+    
+//     int lowestNum = num[0];
+
+//     for (int i = 0; i < length; i++)
+//     {
+//         if (lowestNum>num[i])
+//         {
+//             lowestNum = num[i];
+//         }
+        
+//     }
+//     printf("The lowest number = %d\n", lowestNum);
+    
+//     return 0;
+// }
+
+
+#include <stdio.h>
+
 int main()
 {
-    int num[] = {23, 44, 55, 33, 76, 88, 18, 55};
+    char name[5];
+    int num[5];
 
-    int length = sizeof(num)/sizeof(num[0]);
-    
-    int lowestNum = num[0];
+    printf("Please enter 5 character: ");
 
-    for (int i = 0; i < length; i++)
+    for (int i = 0; i < 5; i++)
     {
-        if (lowestNum>num[i])
-        {
-            lowestNum = num[i];
-        }
-        
+        scanf(" %c", &name[i]);
     }
-    printf("The lowest number = %d\n", lowestNum);
+    printf("Please enter 5 values: ");
+
+    for (int i = 0; i < 5; i++)
+    {
+        scanf("%d", &num[i]);
+    }
+
+    printf("output:");
     
-    return 0;
+    for (int i = 0; i < 5; i++)
+    {
+        printf("%c = %d\n", name[i], num[i]);
+    }
+    
+    
+    
+    return 0; 
 }
