@@ -132,31 +132,48 @@
 
 // ********** Squar & cube ************
 
-#include <stdio.h>
+// #include <stdio.h>
+// int main()
+// {
+//     int number;
+//     int option;
+//     printf("Please enter any number: ");
+//     scanf("%d", &number);
+
+//     printf("Press 1 for cube & 2 for squar: ");
+//     scanf("%d", &option);
+
+//     if (option == 1)
+//     {
+//         printf("%d\n", number*number*number);
+//     }
+//     else if (option == 2)
+//     {
+//         printf("%d\n", number*number);
+//     }
+//     else
+//     {
+//         printf("please slect valid option: \n");
+//     }
+    
+    
+    
+//     return 0;
+// }
+
+
+// Print Alternate Letters from a–z
+
+#include<stdio.h>
 int main()
 {
-    int number;
-    int option;
-    printf("Please enter any number: ");
-    scanf("%d", &number);
-
-    printf("Press 1 for cube & 2 for squar: ");
-    scanf("%d", &option);
-
-    if (option == 1)
-    {
-        printf("%d\n", number*number*number);
-    }
-    else if (option == 2)
-    {
-        printf("%d\n", number*number);
-    }
-    else
-    {
-        printf("please slect valid option: \n");
-    }
+    printf("Print Alternate Letters from a-z\n");
     
-    
+    for (char ch = 'a'; ch <= 'z'; ch+=2)
+    {
+        printf("%c\t", ch);
+    }
     
     return 0;
+
 }
