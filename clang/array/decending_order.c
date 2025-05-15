@@ -1,12 +1,8 @@
-// ******** get 5 input from user and arrange them into ascending oder ******
-
-#include <stdio.h>
-
+#include<stdio.h>
 int main()
 {
     int number[5];
     printf("please enter 5 number: ");
-
     for (int i = 0; i < 5; i++)
     {
         scanf("%d", &number[i]);
@@ -16,7 +12,7 @@ int main()
     {
         for (int j = 0; j < 5; j++)
         {
-            if (number[j]>number[j+1])
+            if (number[j]<number[j+1])
             {
                 int temp = number[j];
                 number[j] = number[j+1];
@@ -32,6 +28,5 @@ int main()
     }
     
     
-    
-    return 0; 
+    return 0;
 }
