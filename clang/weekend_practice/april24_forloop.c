@@ -1,25 +1,29 @@
+// ********* get 1-10 no. from user & use for loop **********
+
 #include<stdio.h>
 int main ()
 {
-    int number;
-    printf("Please enter any number between 1-10: ");
-    scanf("%d", &number);
+    int num;
+    printf("please enter number b/w 1-10: ");
+    scanf("%d", &num);
+    int flag = 0;
 
-    for (int i = 1; i <=10; i++)
+    for (int i = 1; i < 11; i++)
     {
-        if (number==i)
+        if (i == num)
         {
-            printf("match\n");
-            break;
+            flag = 1;
         }
-        else
-        {
-            printf("not match\n");
-            
-        }
-        
-        
     }
+    if (flag == 0)
+    {
+        printf("not matched!!\n");
+    }
+    else
+    {
+        printf("matched!!\n");
+    }
+    
     
     return 0;
 }
