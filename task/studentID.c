@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+void displayMenu();
 int main()
 {
     int num;
@@ -16,11 +17,7 @@ int main()
     while (running)
     {
 
-        printf("please select any number: \n");
-        printf("Press 1 for registrtion: \n");
-        printf("Press 2 for view student record: \n");
-        printf("Press 3 for exit: \n");
-
+        displayMenu();
         scanf("%d", &num);
 
         if (num == 1)
@@ -84,4 +81,11 @@ int main()
     }
 
     return 0;
+}
+void displayMenu(){
+    printf("please select any number: \n");
+    printf("Press 1 for registrtion: \n");
+    printf("Press 2 for view student record: \n");
+    printf("Press 3 for exit: \n");
+    
 }
