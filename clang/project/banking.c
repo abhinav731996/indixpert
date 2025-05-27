@@ -9,7 +9,7 @@ char father[5][30];
 int age[5];
 long long int accountNo[5];
 long long int aadharNo[5];
-int balance[5] = {0}; // Set initial balance to 0 for all accounts
+int balance[5] = {500}; // Set initial balance to 500 for all accounts
 
 int count = 0;
 
@@ -30,7 +30,15 @@ int main()
     {
         displayMenu();
         printf("Enter your choice: ");
-        scanf("%d", &choice);
+        if (scanf("%d", &choice) == 1)
+        {
+        }
+        else
+        {
+            printf("\nInvalid input! Enter a number.\n");
+            while (getchar() != '\n'); // Clear input buffer
+            continue;
+        }
 
         switch (choice)
         {
@@ -87,19 +95,42 @@ void createAccount()
     if (count >= 5)
     {
         printf("Account limit (5) reached!\n");
-        return;
     }
     long long int tempAcc;
-    id[count] = count + 1; // for auto-increment ID
+    id[count] = count + 1123; // for auto-increment ID
 
     printf("Enter Name: ");
     scanf(" %[^\n]", name[count]);
 
-    printf("Enter Aadhar Number: ");
-    scanf("%lld", &aadharNo[count]);
+    while (1)
+    {
+        printf("Enter Aadhar Number: ");
 
-    printf("Enter Age: ");
-    scanf("%d", &age[count]);
+        if (scanf("%lld", &aadharNo[count]) == 1)
+        {
+            break;
+        }
+        else
+        {
+            printf("\nInvalid output! Please enter only number.\n");
+            while (getchar() != '\n'); // clear input buffer
+        }
+    }
+
+    while (1)
+    {
+        printf("Enter Age: ");
+        if (scanf("%d", &age[count]) == 1)
+        {
+            break;
+        }
+        else
+        {
+            printf("\nInvalid output! Please enter only number.\n");
+            while (getchar() != '\n')
+                ;
+        }
+    }
 
     printf("Enter Father's Name: ");
     scanf(" %[^\n]", father[count]);
@@ -107,19 +138,28 @@ void createAccount()
     while (1) // for 11 digit number
     {
         printf("enter 11-digit account number: ");
-        scanf("%lld", &tempAcc);
-        if (tempAcc >= 10000000000 && tempAcc <= 99999999999)
+        if (scanf("%lld", &tempAcc) == 1)
         {
-            accountNo[count] = tempAcc;
-            break;
+
+            if (tempAcc >= 10000000000 && tempAcc <= 99999999999)
+            {
+                accountNo[count] = tempAcc;
+                break;
+            }
+            else
+            {
+                printf("Invalid!! Account number must be 11 digits.\n");
+            }
         }
         else
         {
-            printf("Invalid!! Account number must be 11 digits.\n");
+            printf("\nInvalid output! Please enter only number.\n");
+            while (getchar() != '\n')
+                ;
         }
     }
 
-    balance[count] = 0; // Default balance
+    balance[count] = 500; // Default balance
     printf("Account created successfully! Account ID: %d\n", id[count]);
 
     count++;
@@ -150,84 +190,145 @@ void displayAcc()
 void withdraw()
 {
     int inputId, amt, found = 0;
-    printf("Enter Account ID to withdraw from: ");
-    scanf("%d", &inputId);
-
-    for (int i = 0; i < count; i++)
+    while (1)
     {
-        if (id[i] == inputId)
+        printf("Enter Account ID to withdraw from: ");
+        if (scanf("%d", &inputId) == 1)
         {
-            found = 1;
-            printf("Enter amount to withdraw: ");
-            scanf("%d", &amt);
-            if (amt > 0 && amt <= balance[i])
+
+            for (int i = 0; i < count; i++)
             {
-                balance[i] -= amt;
-                printf("\nWithdrawn ₹%d successfully.\n New Balance: ₹%d\n", amt, balance[i]);
+                if (id[i] == inputId)
+                {
+                    found = 1;
+                    while (1)
+                    {
+                        printf("Enter amount to withdraw: ");
+                        if (scanf("%d", &amt) == 1)
+                        {
+                        }
+                        else
+                        {
+                            printf("\nInvalid input! Please enter valid Amount.\n");
+                            while (getchar() != '\n')
+                                ;
+                        }
+                        if (amt > 100 && amt <= balance[i] && amt%100 == 0 && amt<100000)
+                        {
+                            balance[i] -= amt;
+                            printf("\nWithdrawn %d successfully.\n New Balance: %d\n", amt, balance[i]);
+                            break;
+                        }
+                        else
+                        {
+                            printf("\nInsufficient balance or invalid amount.\n");
+                        }
+                        break;
+                    }
+                    break;
+                }
+                else
+                {
+                    printf("\nAccount not found! Try again!!\n");
+                }
             }
-            else
-            {
-                printf("\nInsufficient balance or invalid amount.\n");
-            }
-            break;
         }
         else
         {
-            printf("\nAccount not found!\n");
+            printf("Invalid input! Please enter valid ID & try again.\n");
+            while (getchar() != '\n')
+                ;
         }
+        break;
     }
 }
 
 void checkBalance()
 {
-    
+
     int inputId, found = 0;
     printf("Enter Account ID to check balance: ");
-    scanf("%d", &inputId);
-
-    for (int i = 0; i < count; i++)
+    while (1)
     {
-        if (id[i] == inputId)
+        if (scanf("%d", &inputId) == 1)
         {
-            printf("\nCurrent balance: ₹%d\n", balance[i]);
-            found = 1;
-            break;
+
+            for (int i = 0; i < count; i++)
+            {
+                if (id[i] == inputId)
+                {
+                    printf("\nCurrent balance: %d\n", balance[i]);
+                    found = 1;
+                    break;
+                }
+                else
+                {
+                    printf("\nAccount not found!!\n");
+                }
+            }
         }
         else
         {
-            printf("\nAccount not found!!\n");
+            printf("\nInvalid input! Enter valid ID.\n");
+            while (getchar() != '\n'); // Clear input buffer
+            continue;
         }
+        
     }
 }
 
 void deposit()
 {
     int inputId, amt, found = 0;
-    printf("Enter Account ID to deposit into: ");
-    scanf("%d", &inputId);
-
-    for (int i = 0; i < count; i++)
+    while (1)
     {
-        if (id[i] == inputId)
+        printf("Enter Account ID to Deposit into: ");
+        if (scanf("%d", &inputId) == 1)
         {
-            found = 1;
-            printf("Enter amount to deposit: ");
-            scanf("%d", &amt);
-            if (amt >= 100)
+
+            for (int i = 0; i < count; i++)
             {
-                balance[i] += amt;
-                printf("\nDeposited ₹%d successfully.\n New Balance: ₹%d\n", amt, balance[i]);
+                if (id[i] == inputId)
+                {
+                    found = 1;
+                    while (1)
+                    {
+                        printf("Enter amount to deposit: ");
+                        if (scanf("%d", &amt) == 1)
+                        {
+                        }
+                        else
+                        {
+                            printf("\nInvalid input! Please enter valid Amount.\n");
+                            while (getchar() != '\n')
+                                ;
+                        }
+                        if (amt > 0 && amt%100 == 0)
+                        {
+                            balance[i] += amt;
+                            printf("\nDeposit %d successfully.\n New Balance: %d\n", amt, balance[i]);
+                            break;
+                        }
+                        else
+                        {
+                            printf("\n Invalid amount.\n");
+                        }
+                        break;
+                    }
+                    
+                }
+                else
+                {
+                    printf("\nAccount not found! Try again!!\n");
+                }
             }
-            else
-            {
-                printf("\nInvalid amount.\n");
-            }
-            break;
         }
         else
         {
-            printf("\nAccount not found!!\n");
+            printf("\nInvalid input! Please enter valid ID & try again.\n");
+            while (getchar() != '\n')
+                ;
         }
+        break;
     }
 }
-
