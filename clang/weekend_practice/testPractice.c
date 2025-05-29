@@ -197,30 +197,84 @@
 //    *  *
 //     *  
 
-#include <stdio.h>
+// #include <stdio.h>
 
-int main()
-{
-    int num = 4;
+// int main()
+// {
+//     int num = 4;
     
-    for (int i = 0; i < num; i++)
-    {
-        for (int space = 0; space < i; space++)
-        {
-            printf(" ");
-        }
-        printf("*");
-        for (int space2 = 0; space2 < 2*(num-i-1); space2++)
-        {
-            printf(" ");
-        }
-        if (i !=num)
-        {
-            printf("*");
-        }
+//     for (int i = 0; i < num; i++)
+//     {
+//         for (int space = 0; space < i; space++)
+//         {
+//             printf(" ");
+//         }
+//         printf("*");
+//         for (int space2 = 0; space2 < 2*(num-i-1); space2++)
+//         {
+//             printf(" ");
+//         }
+//         if (i !=num)
+//         {
+//             printf("*");
+//         }
         
-        printf("\n");
-    }
+//         printf("\n");
+//     }
     
-    return 0; 
+//     return 0; 
+// }
+
+
+
+
+// #include <stdio.h>
+
+// int stringLength(char str[]) {
+//     int length = 0;
+
+//     // Loop until null character '\0' is found
+//     while (str[length] != '\0') {
+//         length++;
+//     }
+
+//     return length;
+// }
+
+// int main() {
+//     char name[] = "Abhinav Sharma";
+    
+//     int len = stringLength(name);
+
+//     printf("Length of the string \"%s\" is: %d\n", name, len);
+
+//     return 0;
+// }
+
+
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char name[] = "Abhinav Sharma";
+
+    int len = strlen(name);
+    printf("Length of the string is: %d\n", len);
+
+    return 0;
 }
+
+
+// #include <stdio.h>
+
+// int main()
+// {
+//     int i = 9;
+//     i--;
+//     --i;
+//     i +=90;
+//     printf("output %d", i);
+//     return 0; 
+// }
+
+
