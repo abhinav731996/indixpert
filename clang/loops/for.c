@@ -66,7 +66,10 @@
 //     return 0;
 // }
 
+
+
 // +++++++++++ print a-z by getting user input ++++++++++
+
 // #include <stdio.h>
 // int main()
 // {
@@ -98,6 +101,8 @@
 //     return 0;
 // }
 
+
+// **************** use of flag ***************
 
 #include <stdio.h>
 
